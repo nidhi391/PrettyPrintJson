@@ -1,3 +1,6 @@
+/**
+ * Java class for inner Fields in Address json
+ */
 public class InnerObjects {
 
     String code;

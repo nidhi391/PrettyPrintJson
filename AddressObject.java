@@ -1,3 +1,6 @@
+/**
+ * Java class for Address Fields
+ */
 public class AddressObject {
 
     String line1;

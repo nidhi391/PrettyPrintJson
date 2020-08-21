@@ -1,7 +1,7 @@
 import static java.lang.System.*;
 
 /**
- *
+ *Java Class to generate GCD
  */
 public class GreatestCommonFactor{
 
