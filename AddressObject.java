@@ -3,8 +3,8 @@
  */
 public class AddressObject {
 
-    String line1;
-    String line2;
+    private String line1;
+    private String line2;
 
     public String getLine1() {
         return line1;
