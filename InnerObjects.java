@@ -3,9 +3,9 @@
  */
 public class InnerObjects {
 
-    String code;
+    private String code;
 
-    String name;
+    private String name;
 
     public String getCode() {
         return code;
