@@ -5,6 +5,7 @@ import org.codehaus.jackson.map.ser.impl.SimpleBeanPropertyFilter;
 import org.codehaus.jackson.map.ser.impl.SimpleFilterProvider;
 import org.codehaus.jackson.map.type.TypeFactory;
 
+import java.io.IOException;
 import java.util.List;
 
 import static java.lang.String.*;
@@ -17,8 +18,10 @@ import static org.codehaus.jackson.map.ser.impl.SimpleBeanPropertyFilter.*;
  */
 public class JsonToPrettyPrint {
 
-    public static void main(String[] args) throws Exception {
-        String jsonString = "[{\"id\":\"1\",\"type\":{\"code\":\"1\",\"name\":\"Physical Address\"},\"addressLineDetail\":{\"line1\":\"Address 1\",\"line2\":\"Line 2\"},\"provinceOrState\":{\"code\":\"5\",\"name\":\"Eastern Cape\"},\"cityOrTown\":\"City 1\",\"country\":{\"code\":\"ZA\",\"name\":\"South Africa\"},\"postalCode\":\"1234\",\"lastUpdated\":\"2015-06-21T00:00:00.000Z\"},{\"id\":\"2\",\"type\":{\"code\":\"2\",\"name\":\"Postal Address\"},\"cityOrTown\":\"City 2\",\"country\":{\"code\":\"LB\",\"name\":\"Lebanon\"},\"postalCode\":\"2345\",\"lastUpdated\":\"2017-06-21T00:00:00.000Z\"},{\"id\":\"3\",\"type\":{\"code\":\"5\",\"name\":\"Business Address\"},\"addressLineDetail\":{\"line1\":\"Address 3\",\"line2\":\"\"},\"cityOrTown\":\"City 3\",\"country\":{\"code\":\"ZA\",\"name\":\"South Africa\"},\"postalCode\":\"3456\",\"lastUpdated\":\"2018-06-13T00:00:00.000Z\"}]";
+    public static void main(String[] args) throws IOException {
+        String jsonString = "[{\"id\":\"1\",\"type\":{\"code\":\"1\",\"name\":\"Physical Address\"},\"addressLineDetail\":{\"line1\":\"Address 1\",\"line2\":\"Line 2\"},\"provinceOrState\":{\"code\":\"5\",\"name\":\"Eastern Cape\"},\"cityOrTown\":\"City 1\",\"country\":{\"code\":\"ZA\",\"name\":\"South Africa\"},\"postalCode\":\"1234\",\"lastUpdated\":\"2015-06-21T00:00:00.000Z\"}" +
+                ",{\"id\":\"2\",\"type\":{\"code\":\"2\",\"name\":\"Postal Address\"},\"cityOrTown\":\"City 2\",\"country\":{\"code\":\"LB\",\"name\":\"Lebanon\"},\"postalCode\":\"23456\",\"lastUpdated\":\"2017-06-21T00:00:00.000Z\"}," +
+                "{\"id\":\"3\",\"type\":{\"code\":\"5\",\"name\":\"Business Address\"},\"addressLineDetail\":{\"line1\":\"Address 3\",\"line2\":\"\"},\"cityOrTown\":\"City 3\",\"country\":{\"code\":\"ZA\",\"name\":\"South Africa\"},\"postalCode\":\"3456\",\"lastUpdated\":\"2018-06-13T00:00:00.000Z\"}]";
         ObjectMapper objectMapper= new ObjectMapper();
         String addressType = "Physical Address";
 
@@ -57,7 +60,7 @@ public class JsonToPrettyPrint {
      * @param bean
      * @return
      */
-    private static String validateAddress(JsonPrettyPrintDemoBean bean) {
+    public static String validateAddress(JsonPrettyPrintDemoBean bean) {
         /**
          * A valid address must consist of a numeric postal code, a country
          * and at least one address line that is not blank or null.

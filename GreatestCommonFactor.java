@@ -17,7 +17,7 @@ public class GreatestCommonFactor{
      * @param length
      * @return
      */
-    private int highestCommonFactor(int[] arr , int length)
+    public int highestCommonFactor(int[] arr , int length)
     {
         int firstElement = arr[0];
         for (int i = 1; i < length; i++)

@@ -9,11 +9,14 @@ public class JsonPrettyPrintDemoBean {
 
     private int id ;
     private InnerObjects type;
+
     private AddressObject addressLineDetail;
     private InnerObjects provinceOrState;
     private String cityOrTown;
+
     private InnerObjects country;
     private String postalCode;
+
     private String lastUpdated;
 
     public int getId() {
@@ -40,13 +43,28 @@ public class JsonPrettyPrintDemoBean {
         return cityOrTown;
     }
 
+    public void setType(InnerObjects type) {
+        this.type = type;
+    }
+
+    public void setCountry(InnerObjects country) {
+        this.country = country;
+    }
+
     public InnerObjects getCountry() {
         return country;
     }
 
+
     public String getPostalCode() {
         return postalCode;
     }
+
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
 
     @Override
     public String toString() {
@@ -61,5 +79,6 @@ public class JsonPrettyPrintDemoBean {
                 ", lastUpdated='" + lastUpdated + '\'' +
                 '}';
     }
+
 
 }
